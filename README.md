@@ -1,2 +1,2 @@
 # SolidariGif
-Dialogue in motion.
+Rosa's Phase 2 Spotlight Challenge.
