@@ -17,7 +17,7 @@
   </div>
 </div>
   <div id="comment_new">
-    <form id="new-comment" action="/comments" method="POST">
+    <form class="new_comment" action="/comments" method="POST">
       <input class="string"type="hidden" name="comment[user_id]" value="<%= @user_id %>">
       <input class="string"type="hidden" name="comment[gif_id]" value="<%= @gif_id %>">
       <textarea class="string"name="comment[content]" placeholder="comment"></textarea>

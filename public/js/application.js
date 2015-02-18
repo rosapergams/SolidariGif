@@ -19,14 +19,15 @@ $(document).ready(function() {
     })
   })
 
-  $("#new_comment").submit(function(e) {
+  $(".new_comment").submit(function(e) {
     e.preventDefault();
-    console.log()
-    $submit = $(event.target);
+    $submit = $(e.target);
+    console.log($submit)
+    $submit = $(e.target);
     $.ajax({
       type: "POST",
       url: '/gifs',
-      data: { value: value },
+      data: $submit.serialize(),
       dataType: 'json'
     }).done(function(response){
       console.log(response)
