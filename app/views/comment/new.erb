@@ -1,0 +1,9 @@
+<div id="comment_new">
+  <form action="/comments" method="POST">
+    <input type="hidden" name="comment[user_id]" value="<%= @user_id %>">
+    <input type="hidden" name="comment[gif_id]" value="<%= @gif_id %>">
+    <textarea name="comment[content]" placeholder="comment"></textarea>
+    <br>
+    <input type="submit">
+  </form>
+</div>

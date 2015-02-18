@@ -1,0 +1,19 @@
+<div class="comment_stuff">
+  <div class="leave_comment">
+    <a href="/gifs/<%= @gif_id %>/comments/new">Add a comment</a>
+  </div>
+
+  <div class="all_comments">
+    <%@comments.each do |comment|%>
+      <div class="comment">
+        <a href="/users/<%=comment.user_id%>">
+          <p class="inline comment_username"><%=comment.user.username%></p>
+        </a>
+        <%if comment.user_id == current_user.id%>
+          <a class="inline comment_edit" href="/comments/<%= comment.id %>/edit" class="edit_comment_link">Edit</a>
+        <%end%>
+        <p class="comment_content"><%=comment.content%></p>
+      </div>
+    <%end%>
+  </div>
+</div>

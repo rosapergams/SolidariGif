@@ -1,0 +1,12 @@
+<div id="comment_edit">
+  <form action="/comments/<%= @comment.id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <textarea name="comment[content]" placeholder="comment"><%= @comment.content %></textarea>
+    <br>
+    <input type="submit">
+  </form>
+  <form action="/comments/<%= @comment.id %>" method="POST" class="comment_delete">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+  </form>
+</div>
