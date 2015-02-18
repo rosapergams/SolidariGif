@@ -1,0 +1,16 @@
+<a href="/categories/<%=@gif.category_id%>">
+  Back
+</a>
+
+<div id="show_gif">
+  <div><img class="inner_img" src="<%=@gif.url%>"></div>
+  <h2 class="gif_caption"><%=@gif.caption%></h2>
+</div>
+
+<%if @gif.user_id == current_user.id%>
+  <a href="/gifs/<%= @gif.id %>/edit" class="edit_gif_link">Edit</a>
+<%end%>
+
+<div class="comment_loader">
+  <a href="/gifs/<%=@gif.id%>/comments">Comments</a>
+</div>

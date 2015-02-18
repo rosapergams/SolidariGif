@@ -8,7 +8,7 @@ NUM_COMMENTS = NUM_GIFS * 5
     username: Faker::Internet.user_name,
     password: Faker::Internet.password,
     about: Faker::Lorem.paragraph,
-    url: Faker::Avatar.image
+    url: "/user.jpg"
     )
 end
 
