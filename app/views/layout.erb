@@ -13,12 +13,14 @@
 <body>
 <div id="content">
   <header>
-    <a href="/">SolidariGif</a>
+    <a href="/"><h1>SolidariGif</h1></a>
     <div id="login-toolbar">
       <% if current_user %>
+        <a href="/users/<%=current_user.id%>"><%=current_user.username%></a>
         <a href="/logout">Logout</a>
       <% else %>
         <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
       <% end %>
   </header>
   <%= yield %>
