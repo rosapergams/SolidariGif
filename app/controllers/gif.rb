@@ -16,3 +16,9 @@ post '/gifs' do
     redirect ("/categories")
   end
 end
+
+get 'gifs/:id' do |id|
+  @comment Comment.where(gif_id: id)
+  @gif = Gif.find(id)
+  erb :'gif/show'
+end
