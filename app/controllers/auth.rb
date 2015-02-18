@@ -3,7 +3,7 @@ get '/' do
 end
 
 get '/login' do
-  @error = "If at first you don't succeed, try, try again." if params[:error].
+  # @error = "If at first you don't succeed, try, try again." if params[:error].
   erb :'auth/login'
 end
 
@@ -13,12 +13,12 @@ post '/login' do
     session[:user_id] = user.id
     redirect '/categories'
   else
-    redirect '/login?error=true'
+    redirect '/login' # ?error=true
   end
 end
 
 get '/signup' do
-  @error = "If at first you don't succeed, try, try again." if params[:error]
+  # @error = "If at first you don't succeed, try, try again." if params[:error]
   erb :'auth/signup'
 end
 
@@ -29,7 +29,7 @@ post '/signup' do
     session[:user_id] = user.id
     redirect '/categories'
   else
-    redirect "/signup?error=true"
+    redirect "/signup" # ?error=true
   end
 end
 
