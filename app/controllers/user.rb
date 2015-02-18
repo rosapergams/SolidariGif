@@ -13,3 +13,10 @@ put '/users/:id' do |id|
     @user.update(params[:user])
     redirect ("/users/#{@user.id}")
 end
+
+delete '/users/:id' do |id|
+    @user = User.find(id)
+    User.find(id).destroy
+    session[:user_id] = nil
+    redirect "/"
+end
