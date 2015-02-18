@@ -1,10 +1,12 @@
-<div class="gifs">
-  <a href="/categories/<%=@category.id%>/gifs/new">Add Gif</a>
-  <h1><%=@category.name%></h1>
+<div class="stuff gifs">
+<!-- <img class="small_logo" src="/fist.png" /> -->
+  <a class="btn lil_button" href="/categories/<%=@category.id%>/gifs/new">Add Gif</a>
   <%@gifs.each do |gif|%>
+    <div class="gif">
     <a href="/gifs/<%=gif.id%>">
       <div><img class="inner_img" src="<%=gif.url%>"></div>
-      <p><%=gif.caption%></p>
+      <p class="gif_caption"><%=gif.caption%></p>
     </a>
+  </div>
   <%end%>
 </div>

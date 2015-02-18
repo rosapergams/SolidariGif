@@ -4,19 +4,21 @@ get '/gifs/:id/comments' do |id|
   erb :'comment/index', layout: false
 end
 
-get '/gifs/:id/comments/new' do |id|
+get '/gifs/:id' do |id|
+  @gif = Gif.find(id)
   @user_id = current_user.id
   @gif_id = id
-  erb :'comment/new'
+  erb :'gif/show'
 end
 
 post '/comments' do
-  @comment = Comment.new(params[:comment])
-  if @comment.save
-    redirect ("/gifs/#{@comment.gif_id}")
-  else
-    redirect ('/gifs/#{@gif.id}/comments/new')
-  end
+  @comment = Comment.create(params[:comment])
+  redirect ("/gifs/#{@comment.gif_id}")
+  # if @comment.save
+  #   redirect ("/gifs/#{@comment.gif_id}")
+  # else
+  #   redirect ('/gifs/#{@comment.gif_id}')
+  # end
 end
 
 get '/comments/:id' do |id|

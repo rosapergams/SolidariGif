@@ -1,71 +1,163 @@
-/* CSS declarations go here */
-body {font-family: Vollkorn; font-size: 160%; line-height: 160%; }
-h1, h2, h3, h4, h5, h6 {font-family: Georgia; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
-h1 {font-size: 1.8em;}
-h2 {font-size: 1.6em;}
-h3 {font-size: 1.4em;}
-h4 {font-size: 1.3em;}
-h5 {font-size: 1.2em;}
-h6 {font-size: 1.1em;}
-p, pre, blockquote, table, ul, ol, dl {margin-top: .5em; margin-bottom: .5em;}
-ul ul, ul ol, ol ol, ol ul {margin-top: 0.5em; margin-bottom: 0.5em;}
-li {margin: 0.3em auto;}
-ul {margin-left: .5em; padding-left: 0.5em;}
-dt {font-weight: bold;}
-img {border: none;}
-pre {border-left: 1px solid #ccc; margin-left: 0em; padding-left: 0.5em;}
-blockquote {padding: 0.3em; background-color: #E8F2F5; margin-left:0.5em; margin-right:0;}
-th, td {border: 1px solid #ccc; padding: 0.3em;}
-th {background-color: #f0f0f0;}
-hr {border: none; border-top: 1px solid #E8F2F5; width: 100%;}
-del {text-decoration: line-through; color: #777777;}
-.toc li {list-style-type: none;}
-.todo {font-weight: bold; background-color: #f0ece8; color: #a03020;}
-.justleft {text-align: left;}
-.justright {text-align: right;}
-.justcenter {text-align: center;}
-.center {margin-left: auto; margin-right: auto;}
-
-footer { font-size: 0.7em; margin-top: 2em;}
-
-#content { margin: 0 auto; padding: 0 1em; max-width: 37em; position: relative; width: 61.8%;}
-
-a {
-    color: #36AECC;
-    text-decoration: none;
+#content {
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 37em;
+  position: relative;
+  width: 75%;
+  margin-bottom: 100px;
 }
 
-a:visited {
-    color: #AAA;
+a {
+  color: rgb(213,213,213);
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
 }
 
 a:hover {
-    color: #000;
-    text-decoration: underline;
-}
-
-.logo {
-  height: 2em;
-}
-
-code {
-    font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    padding: 0px 3px;
-    display: inline-block;
-    color: #52595d;
-    background-color: #E8F2F5;
-    font-size: 40%;
-    line-height: 1.4em;
-    margin-left: -1em;
-    overflow: auto;
 }
 
 .inner_img {
     width: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 72px;
+  background-color: #FFF;
+}
+
+.inline-nav {
+  display: inline-block;
+}
+
+.home_link h1 {
+  margin-left: 100px;
+  color: rgb(233,42,58);
+  line-height: 20px;
+  font-family: 'Pacifico', cursive;
+}
+
+#login-toolbar {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.nav_bar_link {
+  padding-left: 50px;
+}
+
+.logo {
+  -webkit-filter: invert(100%) !important;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+}
+
+.headline {
+  line-height: 20px;
+  font-family: 'Pacifico', cursive;
+  font-size: 60px;
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.string {
+  width: 95%;
+  background: none;
+  text-decoration: none;
+  box-shadow: none;
+  text-shadow: none;
+  border: none;
+  border-radius: 0;
+  background: #FFF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+textarea {
+  height: 150px;
+}
+
+.btn {
+  background: none;
+  text-decoration: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: #fff;
+  border-radius: none;
+  background-color: rgb(233,42,58);
+  border-radius: 0;
+  padding: 20px 30px 20px 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html {
+  background: rgb(235,234,230);
+  font-family: 'Lato', sans-serif;
+}
+
+.stuff {
+  margin-top: 150px;
+}
+
+.category_link {
+  background-color: #FFF;
+  padding: 25px;
+  font-size: 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.small_logo {
+  -webkit-filter: invert(100%) !important;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gif {
+  background-color: #FFF;
+  padding: 25px;
+  margin-top: 25px;
+}
+
+.gif_caption {
+  border-bottom: 1.5px solid #E5E5E5;
+  font-family: 'Lato', sans-serif;
+  padding: 10px;
+  font-size: 20px;
+  color: #999;
+}
+
+.lil_button {
+  width: 75px;
+  text-align: center;
+  padding-top
+}
+
+.padding {
+  margin-top: 25px;
+}
+
+form {
+
+}
+
+.padding_more {
+  margin-top: 150px;
 }

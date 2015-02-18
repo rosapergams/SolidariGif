@@ -1,16 +1,27 @@
-<a href="/categories/<%=@gif.category_id%>">
-  Back
-</a>
+<div class="stuff">
+  <a class="btn lil_button" href="/categories/<%=@gif.category_id%>">
+    Back
+  </a>
 
-<div id="show_gif">
-  <div><img class="inner_img" src="<%=@gif.url%>"></div>
-  <h2 class="gif_caption"><%=@gif.caption%></h2>
+  <div class="gif">
+    <div><img class="inner_img" src="<%=@gif.url%>"></div>
+    <h2 class="gif_caption"><%=@gif.caption%></h2>
+  </div>
+
+  <%if @gif.user_id == current_user.id%>
+    <a href="/gifs/<%= @gif.id %>/edit" class="edit_gif_link">Edit</a>
+  <%end%>
+
+  <div class="comment_loader">
+    <a class="btn lil_button padding" href="/gifs/<%=@gif.id%>/comments">Comments</a>
+  </div>
 </div>
-
-<%if @gif.user_id == current_user.id%>
-  <a href="/gifs/<%= @gif.id %>/edit" class="edit_gif_link">Edit</a>
-<%end%>
-
-<div class="comment_loader">
-  <a href="/gifs/<%=@gif.id%>/comments">Comments</a>
-</div>
+  <div id="comment_new">
+    <form id="new-comment" action="/comments" method="POST">
+      <input class="string"type="hidden" name="comment[user_id]" value="<%= @user_id %>">
+      <input class="string"type="hidden" name="comment[gif_id]" value="<%= @gif_id %>">
+      <textarea class="string"name="comment[content]" placeholder="comment"></textarea>
+      <br>
+      <input class="btn" type="submit">
+    </form>
+  </div>

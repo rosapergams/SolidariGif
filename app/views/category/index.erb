@@ -1,8 +1,8 @@
-<div class="categories">
-  <h1>Categories</h1>
+<div class="categories stuff">
+<img class="small_logo" src="/fist.png" />
   <%@categories.each do |category|%>
     <a href="/categories/<%=category.id%>">
-      <h4><%=category.name%></h4>
+      <h4 class="category_link"><%=category.name%></h4>
     </a>
   <%end%>
 </div>

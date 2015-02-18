@@ -3,8 +3,12 @@
 <head>
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/application.css">
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+  <% if !current_user %>
+    <link rel="stylesheet" href="/css/index.css">
+  <% end %>
 
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
@@ -14,19 +18,20 @@
 <div id="content">
   <header>
     <% if current_user %>
-      <a href="/categories"><h1>SolidariGif</h1></a>
+      <a class="inline-nav home_link" href="/categories"><h1>SolidariGif</h1></a>
     <% else %>
-      <a href="/"><h1>SolidariGif</h1></a>
+      <a class="inline-nav home_link" href="/"><h1>SolidariGif</h1></a>
     <% end %>
 
-    <div id="login-toolbar">
+    <div class="inline-nav" id="login-toolbar">
       <% if current_user %>
-        <a href="/users/<%=current_user.id%>"><%=current_user.username%></a>
-        <a href="/logout">Logout</a>
+        <a class="nav_bar_link" href="/users/<%=current_user.id%>"><%=current_user.username%></a>
+        <a class="nav_bar_link" href="/logout">Logout</a>
       <% else %>
-        <a href="/login">Login</a>
-        <a href="/signup">Signup</a>
+        <a class="nav_bar_link" href="/login">Login</a>
+        <a class="nav_bar_link" href="/signup">Signup</a>
       <% end %>
+    </div>
   </header>
   <%= yield %>
 </div>

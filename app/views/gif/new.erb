@@ -1,12 +1,12 @@
-<div id="gif_new">
+<div class="padding_more" id="gif_new">
   <form action="/gifs" method="POST">
     <input type="hidden" name="gif[user_id]" value="<%= @user_id %>">
     <input type="hidden" name="gif[category_id]" value="<%= @category_id %>">
 
-    <input type="text" name="gif[url]" placeholder="url">
+    <input class="string" type="text" name="gif[url]" placeholder="url">
     <br>
-    <textarea name="gif[caption]" placeholder="caption"></textarea>
+    <textarea class="string" name="gif[caption]" placeholder="caption"></textarea>
     <br>
-    <input type="submit">
+    <input class="btn" type="submit">
   </form>
 </div>
