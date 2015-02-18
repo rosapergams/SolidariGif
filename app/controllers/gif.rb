@@ -18,7 +18,19 @@ post '/gifs' do
 end
 
 get 'gifs/:id' do |id|
-  @comment Comment.where(gif_id: id)
+  @comment = Comment.where(gif_id: id)
   @gif = Gif.find(id)
   erb :'gif/show'
+end
+
+get '/gifs/:id/edit' do |id|
+  @user_id = current_user.id
+  @gif = Gif.find(id)
+  erb :'gif/edit'
+end
+
+put '/gifs/:id' do |id|
+  @gif = Gif.find(id)
+  @gif.update(params[:gif])
+  redirect ("/gifs/#{@gif.id}")
 end
