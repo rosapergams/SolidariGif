@@ -20,7 +20,7 @@ end
 
 (NUM_GIFS).times do
   Gif.create(
-    url: "/gif.gif",
+    url: ["/gif_1.gif", "/gif_2.gif", "/gif_3.gif", "/gif_4.gif", "/gif_5.gif"].sample,
     caption: Faker::Lorem.sentence,
     category_id: rand(1..NUM_CATEGORIES),
     user_id: rand(1..NUM_USERS)
