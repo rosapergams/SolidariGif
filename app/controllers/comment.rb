@@ -1,7 +1,7 @@
 get '/gifs/:id/comments' do |id|
   @gif_id = id
   @comments = Comment.where(gif_id: id)
-  erb :'comment/index'
+  erb :'comment/index', layout: false
 end
 
 get '/gifs/:id/comments/new' do |id|
