@@ -1,0 +1,2 @@
+# SolidariGif
+Dialogue in motion.
