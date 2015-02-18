@@ -3,7 +3,7 @@ get '/categories' do
   erb :'category/index'
 end
 
-get 'categories/:id' do |id|
+get '/categories/:id' do |id|
   @gifs = Gif.where(category_id: id)
   @category = Category.find(id)
   erb :'category/show'

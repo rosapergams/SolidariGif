@@ -1,43 +1,42 @@
-get '/gifs/:id/comments' do |id|
-  @comments = Comment.where(gif_id: id)
-  erb :'comment/index'
+get '/gifs' do # display a list of all gifs
+  redirect ("/categories")
 end
 
-get '/gifs/:id/comments/new' do |id|
+get '/categories/:id/gifs/new' do |id|# return an HTML form for creating a new gif
   @user_id = current_user.id
-  @gif_id = id
-  erb :'comment/new'
+  @category_id = id
+  erb :'gif/new'
 end
 
-post '/comments' do
-  @comment = Comment.new(params[:comment])
-  if @comment.save
-    redirect ("/gifs/#{@comment.gif_id}")
+post '/gifs' do # create a new gif
+  @gif = Gif.new(params[:gif])
+  if @gif.save
+    redirect ("/gifs/#{@gif.id}")
   else
-    redirect ('/gifs/#{@gif.id}/comments/new')
+    redirect ("/categories")
   end
 end
 
-get '/comments/:id' do |id|
-  @comments = Comment.where(comment_id: id)
-  @comment = Comment.find(id)
-  erb :'comment/show'
+get '/gifs/:id' do |id|
+  @comments = Comment.where(gif_id: id) # display a specific gif
+  @gif = Gif.find(id)
+  erb :'gif/show'
 end
 
-get '/comments/:id/edit' do |id|
+get '/gifs/:id/edit' do |id| # return an HTML form for editing a gif
   @user_id = current_user.id
-  @comment = Comment.find(id)
-  erb :'comment/edit'
+  @gif = Gif.find(id)
+  erb :'gif/edit'
 end
 
-put '/comments/:id' do |id|
-  @comment = Comment.find(id)
-  @comment.update(params[:comment])
-  redirect ("/gifs/#{@comment.gif_id}")
+put '/gifs/:id' do |id| # update a specific gif
+  @gif = Gif.find(id)
+  @gif.update(params[:gif])
+  redirect ("/gifs/#{@gif.id}")
 end
 
-delete '/comments/:id' do |id|
-  @comment = Comment.find(id)
-  @comment.destroy
-  redirect "/gifs/#{@comment.gif_id}"
+delete '/gifs/:id' do |id| # delete a specific gif
+  @gif = Gif.find(id)
+  @gif.destroy
+  redirect "/categories/#{@gif.category_id}" # redirect to 'categories/:id'
 end

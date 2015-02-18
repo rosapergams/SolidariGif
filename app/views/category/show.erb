@@ -1,0 +1,10 @@
+<div class="gifs">
+  <a href="/categories/<%=@category.id%>/gifs/new">Add Gif</a>
+  <h1><%=@category.name%></h1>
+  <%@gifs.each do |gif|%>
+    <a href="/gifs/<%=gif.id%>">
+      <div><img class="inner_img" src="<%=gif.url%>"></div>
+      <p><%=gif.caption%></p>
+    </a>
+  <%end%>
+</div>
