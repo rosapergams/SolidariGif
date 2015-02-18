@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :gifs, dependant: :destroty
+  has_many :gifs, dependant: :destroy
 end

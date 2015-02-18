@@ -1,3 +1,5 @@
 class Gif < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :comments, dependant: :destroy
+  belongs_to :category
+  belongs_to :user
 end
