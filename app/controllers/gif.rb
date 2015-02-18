@@ -34,3 +34,9 @@ put '/gifs/:id' do |id|
   @gif.update(params[:gif])
   redirect ("/gifs/#{@gif.id}")
 end
+
+delete '/gifs/:id' do |id|
+  @gif = Gif.find(id)
+  @gif.destroy
+  redirect "/categories/#{@gif.category_id}"
+end
