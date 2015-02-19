@@ -1,6 +1,6 @@
 <div class="stuff">
-  <a class="btn lil_button" href="/categories/<%=@gif.category_id%>">
-    Back
+  <a href="/categories/<%=@gif.category_id%>">
+    <img class="back_btn" src="/back.png" />
   </a>
 
   <div class="gif">
@@ -12,16 +12,17 @@
     <a href="/gifs/<%= @gif.id %>/edit" class="edit_gif_link">Edit</a>
   <%end%>
 
-  <div class="comment_loader">
-    <a class="btn lil_button padding" href="/gifs/<%=@gif.id%>/comments">Comments</a>
-  </div>
-</div>
   <div id="comment_new">
     <form class="new_comment" action="/comments" method="POST">
       <input class="string"type="hidden" name="comment[user_id]" value="<%= @user_id %>">
       <input class="string"type="hidden" name="comment[gif_id]" value="<%= @gif_id %>">
       <textarea class="string"name="comment[content]" placeholder="comment"></textarea>
       <br>
-      <input class="btn" type="submit">
+      <input class="add_comment_btn btn" type="submit">
     </form>
   </div>
+
+  <div class="comment_loader">
+    <a class="btn lil_button padding comment_btn" href="/gifs/<%=@gif.id%>/comments">Comments</a>
+  </div>
+</div>

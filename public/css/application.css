@@ -10,7 +10,7 @@
 a {
   color: rgb(213,213,213);
   text-decoration: none;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Cantarell', sans-serif;
 }
 
 a:hover {
@@ -77,8 +77,6 @@ header {
   border: none;
   border-radius: 0;
   background: #FFF;
-  margin-top: 10px;
-  margin-bottom: 10px;
   padding: 15px;
   display: block;
   margin-left: auto;
@@ -103,6 +101,11 @@ textarea {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 15px;
+  border-radius: 2.5px;
+  text-align: center;
+  padding: 15px 30px 15px 30px;
+  width: 150px;
 }
 
 html {
@@ -133,7 +136,7 @@ html {
 .gif {
   background-color: #FFF;
   padding: 25px;
-  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .gif_caption {
@@ -154,8 +157,8 @@ html {
   margin-top: 25px;
 }
 
-form {
-
+.comment_stuff {
+  margin-top: 75px;
 }
 
 .padding_more {
@@ -191,4 +194,29 @@ form {
   font-size: 20px;
   padding: 20px;
   color: #555;
+}
+
+.back_btn {
+  opacity: .25;
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.add_comment_btn {
+  margin-top: -10px;
+  padding: 10px 20px 10px 20px;
+  float: right;
+  border-radius: 2.5px;
+}
+
+.comment_btn {
+  margin-top: 50px;
+}
+
+.intro {
+
+}
+
+.intro {
+  margin-top: 20px;
 }
