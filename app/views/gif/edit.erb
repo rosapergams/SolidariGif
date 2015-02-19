@@ -1,17 +1,19 @@
+<div class="stuff">
 <div id="gif_edit">
   <form action="/gifs/<%= @gif.id %>" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <input type="hidden" name="gif[user_id]" value="<%= @user_id %>">
     <input type="hidden" name="gif[category_id]" value="<%= @gif.category_id %>">
 
-    <input type="text" name="gif[url]" value="<%= @gif.url %>" placeholder="url">
+    <input class="string" type="text" name="gif[url]" value="<%= @gif.url %>" placeholder="url">
     <br>
-    <textarea name="gif[caption]" placeholder="caption"><%= @gif.caption %></textarea>
+    <textarea class="string" name="gif[caption]" placeholder="caption"><%= @gif.caption %></textarea>
     <br>
-    <input type="submit" value="Update">
+    <input class="btn" type="submit" value="Update">
   </form>
   <form action="/gifs/<%= @gif.id %>" method="POST" class="gif_delete">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete">
+    <input class="btn padding" type="submit" value="Delete">
   </form>
+</div>
 </div>

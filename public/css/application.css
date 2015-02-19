@@ -161,3 +161,34 @@ form {
 .padding_more {
   margin-top: 150px;
 }
+
+.comment {
+  border-top: 1.5px solid #E3E3E3;
+  padding: 15px 0px 15px 0px;
+}
+
+.comment_username {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+
+.all_comments {
+  background-color: #FFF;
+  padding: 25px;
+  margin-top: 25px;
+}
+
+.username {
+  font-family: 'Pacifico', cursive;
+  color: #333;
+  text-align: center;
+  font-size: 45px;
+}
+
+.about {
+  background-color: #FFF;
+  font-size: 20px;
+  padding: 20px;
+  color: #555;
+}

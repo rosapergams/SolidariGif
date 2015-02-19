@@ -1,15 +1,17 @@
+<div class="stuff">
 <div class="edit_user_form">
   <form action="/users/<%= @user.id %>" method="POST" class="edit_user">
     <input type="hidden" name="_method" value="PUT">
-    <textarea name="user[about]"><%= @user.about %></textarea>
+    <textarea class="string" name="user[about]"><%= @user.about %></textarea>
     <br>
-    <input type="text" name="user[url]" value="<%= @user.url %>">
+    <input class="string" type="text" name="user[url]" value="<%= @user.url %>">
     <br>
-    <input type="submit" value="Update">
+    <input class="btn padding" type="submit" value="Update">
   </form>
 
   <form action="/users/<%= @user.id %>" method="POST" class="user_delete">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete">
+    <input class="btn padding" type="submit" value="Delete">
   </form>
+</div>
 </div>

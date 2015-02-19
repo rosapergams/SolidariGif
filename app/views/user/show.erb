@@ -1,8 +1,10 @@
+<div class="stuff">
 <div id="user_profile">
-  <h1><%=@user.username%></h1>
+  <h1 class="username" ><%=@user.username%></h1>
   <div><img class="inner_img" src="<%=@user.url%>"></div>
-  <p><%=@user.about%></p>
+  <p class="about" ><%=@user.about%></p>
 </div>
 <%if @user.id == current_user.id%>
   <a href="/users/<%= @user.id %>/edit" class="edit_user_link">Edit</a>
 <%end%>
+</div>

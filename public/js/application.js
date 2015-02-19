@@ -22,16 +22,13 @@ $(document).ready(function() {
   $(".new_comment").submit(function(e) {
     e.preventDefault();
     $submit = $(e.target);
-    console.log($submit)
-    $submit = $(e.target);
     $.ajax({
       type: "POST",
-      url: '/gifs',
+      url: $submit.attr('action'),
       data: $submit.serialize(),
       dataType: 'json'
     }).done(function(response){
       console.log(response)
     })
   });
-
 });

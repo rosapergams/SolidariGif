@@ -7,7 +7,9 @@
     <%@comments.each do |comment|%>
       <div class="comment">
         <a href="/users/<%=comment.user_id%>">
-          <p class="inline comment_username"><%=comment.user.username%></p>
+          <p class="inline comment_username">
+            <%=comment.user.username%>
+          </p>
         </a>
         <%if comment.user_id == current_user.id%>
           <a class="inline comment_edit" href="/comments/<%= comment.id %>/edit" class="edit_comment_link">Edit</a>

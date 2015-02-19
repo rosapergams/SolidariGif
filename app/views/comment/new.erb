@@ -1,9 +1,11 @@
+<div class="stuff">
 <div id="comment_new">
   <form action="/comments" method="POST">
     <input class="string"type="hidden" name="comment[user_id]" value="<%= @user_id %>">
-    <input class="string"type="hidden" name="comment[gif_id]" value="<%= @gif_id %>">
+    <input class="string" type="hidden" name="comment[gif_id]" value="<%= @gif_id %>">
     <textarea class="string"name="comment[content]" placeholder="comment"></textarea>
     <br>
-    <input type="submit">
+    <input class="btn" type="submit">
   </form>
+</div>
 </div>
